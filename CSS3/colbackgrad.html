@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Colors, Background & Gradients</title>
+        <style media="screen">
+            #rounded1{
+                background:rgba(255,0,0,0.5); /* 4th parameter is alpha for transparency*/
+                color:white;
+                width:200px;
+                height:200px;
+                padding:30px;
+                border-radius:20px 0px;
+            }
+
+            #rounded2{
+                background:hsl(120,100%,75%);
+                color:white;
+                width:200px;
+                height:200px;
+                padding:30px;
+                border-radius:20px 0px;
+            }
+
+            #rounded3{
+                background:hsla(120,100%,50%,0.3);
+                color:white;
+                width:200px;
+                height:200px;
+                padding:30px;
+                border:3px black solid;
+                border-radius:50%;
+            }
+
+            img{
+                border-radius:50%;
+            }
+
+            #border-img{
+                border:10px solid transparent;
+                padding:15px;
+                border-image: url('border.png') 30 round;
+            }
+
+            #my-bg{
+                background-image: url('img_flwr.gif'), url('paper.gif');
+                background-position: right bottom, left top;
+                background-repeat: no-repeat, repeat;
+                padding:15px 200px 15px 15px;
+                background-size: 100px 100px;
+            }
+
+            #grad1{
+                width:500px;
+                height:200px;
+                background:blue; /* keep for older browsers that don't support gradient */
+                background:linear-gradient(blue, black, white);
+            }
+
+            #grad2{
+                width:500px;
+                height:200px;
+                background:blue; /* keep for older browsers that don't support gradient */
+                background:linear-gradient(to right, blue, black);
+            }
+
+            #grad3{
+                width:500px;
+                height:200px;
+                background:blue; /* keep for older browsers that don't support gradient */
+                background:linear-gradient(to bottom right, blue, black);
+            }
+
+            #grad4{
+                width:500px;
+                height:200px;
+                background:blue; /* keep for older browsers that don't support gradient */
+                background:repeating-radial-gradient(circle, white 5%, blue 15%, black 60%);
+            }
+        </style>
+    </head>
+    <body>
+        <div id="rounded1">Rounded Corners</div>
+        <br>
+        <div id="rounded2">Rounded Corners</div>
+        <br>
+        <div id="rounded3">Rounded Corners</div>
+        <br>
+        <img src="bird.jpg" alt="IMG not found">
+        <br>
+        <div id="border-img">This div uses an image border</div>
+        <br>
+        <div id="my-bg">
+            <h1>Welcome</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas et eros vel dui ultricies congue. Proin finibus, odio nec cursus gravida, massa purus convallis turpis, a pretium magna lacus non urna. Suspendisse leo justo, molestie ac ornare quis, feugiat eu nibh.</p>
+            <p>Fusce cursus placerat nisl, vel dignissim arcu condimentum non. Proin quis nulla turpis. Praesent semper, mi id viverra malesuada, leo ipsum sodales augue, vitae egestas quam ex eget tortor. Ut id nisi ac elit iaculis hendrerit ut ac lorem.</p>
+        </div>
+        <br>
+        <div id="grad1"></div>
+        <div id="grad2"></div>
+        <div id="grad3"></div>
+        <div id="grad4"></div>
+    </body>
+</html>
