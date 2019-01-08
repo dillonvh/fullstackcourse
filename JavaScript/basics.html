@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>JS Basics</title>
+  </head>
+  <body onload="init()">
+    <ul id="cars">
+
+    </ul>
+
+    <br>
+
+    <button onclick="getDate()">Get Date</button>
+    <h1 id="showDate"></h1>
+
+    <form id="myForm">
+      <div>
+        <label>Name</label>
+        <input type="text" id="name">
+      </div>
+      <div>
+        <label>Email</label>
+        <input type="email" id="email">
+      </div>
+      <input type="submit" value="Submit">
+    </form>
+
+    <!-- Arrays, Objects -->
+    <script type="text/javascript">
+      // OUTPUT
+      //console.log('Hello World');
+      //document.write('Hello World');
+      //alert('Hello World');
+      //document.getElementById('test').innerHTML = 'Hello World';
+
+      // VARIABLES
+      //var x = 5;
+      //console.log(x);
+
+      // ARRAYS
+      var animals = ['Dog', 'Cat', 'Horse'];
+      //console.log(animals);
+
+      animals[3] = 'Cow'
+      //console.log(animals);
+
+      animals.push('Pig');
+      //console.log(animals.sort());
+
+      // associative array (key, value)
+      var person = [];
+      person['name'] = 'John Doe';
+      person['age'] = 35;
+      person['city'] = 'New York';
+      //console.log(person);
+
+      var car = {make:'Ford', model:'Ranger', year:2009};
+      //console.log(car.model);
+
+      var cars = [
+        {
+          make:'Ford',
+          model:'Mustang',
+          year:2009
+        },
+        {
+          make:'Honda',
+          model:'Civic',
+          year:2006
+        }
+      ]
+
+      //console.log(cars[1].model);
+
+    </script>
+
+    <!-- Loops, Conditionals -->
+    <script type="text/javascript">
+      /*
+      for (i = 0;i < 10;i++){
+        console.log(i)
+      }
+
+      var i = 0;
+      while(i < 10){
+        console.log(i);
+        i++;
+      }
+      */
+      /*
+      for (var i = 0; i < animals.length; i++) {
+        console.log(animals[i])
+      }
+      */
+
+      for (var i = 0; i < cars.length; i++) {
+        document.getElementById('cars').innerHTML += '<li>' + cars[i].make + ' | ' + cars[i].model + ' | ' + cars[i].year + '</li>'
+      }
+
+      var x = 15;
+      var y = 15;
+
+      if (x < y) {
+        //console.log(x + ' is less than ' + y);
+      } else if (x > y){
+        //console.log(x + ' is more than ' + y);
+      } else {
+        //console.log(x + ' is equal to ' + y);
+      }
+
+    </script>
+
+    <!-- Functions, Events -->
+    <script type="text/javascript">
+      function sayHello(greeting, name = 'Susan'){
+        alert(greeting + ' ' + name);
+      }
+
+      //sayHello('Hello');
+
+      function getSum(a, b){
+        alert(a+b);
+      }
+
+      //getSum(2,4);
+
+      function getDate(){
+        var d = Date();
+        document.getElementById('showDate').innerHTML = d;
+      }
+
+      function submitForm(e){
+        e.preventDefault();
+        var name = document.getElementById('name').value;
+        var email = document.getElementById('email').value;
+
+        console.log(name + '\n' + email);
+      }
+
+      function init(){
+        console.log('Page Loaded');
+        
+      }
+
+      document.getElementById('myForm').addEventListener('submit', submitForm, false);
+
+    </script>
+  </body>
+</html>
